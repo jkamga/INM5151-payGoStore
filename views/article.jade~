@@ -1,0 +1,26 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Article 
+  body#artic
+    h1 Titre : #{moArticle.titre}
+    div
+      ul.photolist1
+        li numero de l'article : #{moArticle.id}
+        li nom : #{moArticle.nom}&nbsp;  #{moArticle.prenom}
+        li date de publication: #{moArticle.date}
+        li categorie : #{moArticle.catego} 
+    div
+      strong 
+       "contenue de l'aricle" : 
+      !{moArticle.desc}
+   p  
+     a(href="/") retourn a la page d'acceuille
+   p 
+     a(href="/admin/#{moArticle.id}", attribut=moArticle.nom) modifier ce dossier        
+   p
+     | supprimer cet article 
+     a(href="/supprimer/#{moArticle.id}") ✘
+

@@ -1,0 +1,49 @@
+!!! 5
+html
+  head
+    link(type='text/css', rel='stylesheet', href='stylesheets/style.css')
+    script(src='/javascripts/script.js')
+    title Modification
+  body
+    h3 enregistrement des informations sur votre produit
+    form(method='post', action='/enregistrer')
+      fieldset
+        legend Informations personelles
+        label(for='numero') Numero dossier: &nbsp;&nbsp;   
+        input(type='text',id='numero',name='numero', value = '#{moArticle.id}',disabled='disabled')
+        br
+        label(for='nom') Quel est votre nom &#1645?&nbsp;&nbsp;
+        input(type='text',id='nom', name='nom',value = '#{moArticle.nom}', onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')
+        br
+        label(for='prenom') Quel est votre prenom &#1645?&nbsp;
+        input(type='text',id='prenom', name='prenom',value = '#{moArticle.prenom}',onblur = 'return verifChamp(this)', tablindex='2',required='required', accesskey='p')
+            br
+      fieldset
+        legend Information sur l'article
+        label(for='categorie') choisi une categorie de l'article
+        select(size='1',id = 'categorie' name = 'categorie',value='#{moArticle.catego}')
+          option(value='#{moArticle.catego}')
+          option(value='informatique') Informatique
+          option(value='menage') Menage
+          option(value='lingerie') Lingerie
+        br
+        label(for='titre') le nom de l'aritcle &#1645?: &nbsp;&nbsp;
+        input(type='text',id='titre', name='titre', tablindex='3', accesskey='P',required='required',onblur = 'return verifChamp(this)',value = '#{moArticle.titre}')
+        br
+        label(for='date') date de publication de l'aritcle: &nbsp;&nbsp;
+        input(type='text',id='date', name='date', tablindex='3', required='required',accesskey='P',value = '#{moArticle.date}',disabled='disabled')
+        br
+        label(for='desc') decriver votre article &#1645?: &nbsp;&nbsp;
+        br
+        textarea(accesskey='d',id='desc',rows='20' ,cols='100' ,name='desc',onblur = 'return verifChamp(this)',tablindex='6' ,value = '#{moArticle.desc}') !{moArticle.desc}
+        br
+        label(for='Image') inclure une image ou un fichier: &nbsp;&nbsp;
+        input(type='file', name='Image', accept='image/pdf', id = '',disabled='disabled') "cette option n'est pas encore implementee"
+        br
+      input(type='button', value='Publier', onclick='return verifModifChamp()')      
+    p
+    .precision
+      | les informations enresgistrées ne seront ni divulguées, ni publié sans votre accord
+    p
+      a.Acc(href='/', title='allez au debut') retournez a la page d'acceuille
+  

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Liste d'Articles
+  table
+      thead
+        tr
+          th date de publication
+          th titre de l'article
+          th supprimer article
+      tbody 
+       each article in donnee
+          tr
+            td.id#id #{article.date}
+            td 
+                     a(href="/#{article.id}", attribut=article.titre) #{article.titre}
+            td       
+                     a(href="/supprimer/#{article.id}") ✘
+  br        
+  a#im(href="/admin/publier") Enregistrement ici
+  br
+  a#img(href="/enregistrement/nouveau_membre") Devenez membre ici
