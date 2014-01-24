@@ -1,97 +1,71 @@
+doctype
 html
   head
-    meta(charset='utf-8')
-    link(rel='stylesheet', href='styleformule.css')
-    title
-      | Enregistrement
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/script.js')
   body
-    .grand
-      .log
-        h1 PayGoStore
-      .form
-      
-        h2 infomations personnelles
-        form(name='job', method='get', action='hCp://www.site.com/traitement', enctype='text/plain')
-
-                  | les informations avec
-                  span &#1645
-                  | sont abligatoire
-                td
-                  | sexe:
-                  span &#1645
-                td
-                  input(type='radio', name='champSexe', value='M')
-                  | Masculin
-                  input(type='radio', name='champSexe', value='F')
-                  | Feminin
-                tr
-                  td
-                    | Nom:
-                    span &#1645
-                  td
-                    input(type='text', name='champNom', tablindex='1', accesskey='N', required='required')
-                  tr
-                    td Prénom:
-                    td
-                      input(type='text', name='champPrenom', tablindex='2', accesskey='P')
-                    tr
-                      td
-                        | Pseudo:
-                        span &#1645
-                      td
-                        input(type='text', name='champPseudo', tablindex='3', accesskey='P', required='required')
-                      tr
-                        td
-                          | Mot de passe:
-                          span &#1645
-                        td
-                          input(type='password', name='champPass', tablindex='4', accesskey='M', required='required')
-                        tr
-                          td
-                            | Mot de passe:
-                            span &#1645
-                          td
-                            input(type='password', name='champPassV', tablindex='5', accesskey='M', required='required')
-                          tr
-                            td
-                              | Téléphone:
-                              span &#1645
-                            td
-                              input(type='text', name='champTel', placeholder='(541)000-0000', tablindex='6', accesskey='T', required='required')
-                            tr
-                              td Cellulaire:
-                              td
-                                input(type='text', name='champCell', tablindex='7', accesskey='C')
-                              tr
-                                td
-                                  | Courriel:
-                                  span  &#1645
-                                td
-                                  input(type='email', name='champCourriel', placeholder='rien@mail.ca', tablindex='8', accesskey='C', required='required')
-                                tr
-                                  td
-                                    | Adresse:
-                                    span &#1645
-                                  td
-                                    input(type='text', name='champAdresse', tablindex='9', accesskey='A')
-                                  tr
-                                    td
-                                      | Code postal:
-                                      span &#1645
-                                    td
-                                      input(type='text', name='champCodePost', placeholder='Q1Q-1Q1', tablindex='10', accesskey='C', required='required')
-                                    tr
-                                      td Date Naissance:
-                                      td
-                                        input(type='text', name='champDateN', tablindex='11', accesskey='D')
-                                      tr
-            | Enregistrer:
-            a.Acc(href='Acceuil.html', title='allez au debut')
-              input(type='submit', value='envoi', tablindex='12', accesskey='V')
-            input(type='reset', value='Anuller', tablindex='13', accesskey='A')
-          .precision
-            | les informations enresgistrées ne seront ni divulguées, ni publié sans votre accord
-        p
-          a.Acc(href='Acceuil.html', title='allez au debut') retournez a la page d'acceuille
-    .pageBas
-
+    h1 bienvenu au nouveau membre
+    form(name='job', method='post', action='/enregisterer', enctype='utf-8')
+      fieldset
+        legend Informations personnelles
+        label(for='nom') Nom &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='nom',id='nom',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='prenom') Prenom &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='prenom',id='prenom',onblur = 'return verifChamp(this)', tablindex='2',required='required', accesskey='n')        
+        br
+        label(for='sexe') Genre: &nbsp;&nbsp;   
+        select(size='1',id = 'sexe')
+          option(value=)
+          option(value='F') Femme
+          option(value='H') Homme
+        br
+        label(for='age') date de naissance &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='age',id='age',onblur = 'return validerDate(this)',placeholder= 'YYYY-MM-DD', tablindex='2',required='required', accesskey='n')        
+        br
+        label(for='corriel') Corriel &#1645?&nbsp;&nbsp;
+        br
+        input(type='email', name='corriel',id='corriel',onblur = 'return verifChamp(this)', tablindex='2',required='required', accesskey='n')        
+        br
+        label(for='password') entrez un mot de passe &#1645?&nbsp;&nbsp;
+        br
+        input(type='password', name='password',id='password',onblur = 'return verifChamp(this)', tablindex='2',required='required', accesskey='n')        
+        br
+        label(for='password') Confirmer le mot de passe &#1645?&nbsp;&nbsp;
+        br
+        input(type='password', name='password',id='password',onblur = 'return verifChamp(this)', tablindex='2',required='required', accesskey='n')        
+        br
+      fieldset
+        legend Informations de localisation
+        label(for='adresse') Adresse ?&nbsp;&nbsp;
+        br
+        input(type='text', name='adresse',id='adresse',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='ville') Ville ?&nbsp;&nbsp;
+        br
+        input(type='text', name='ville',id='ville',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='codePost') Code postal ?&nbsp;&nbsp;
+        br
+        input(type='text', name='codePost',id='codePost',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='province') Province ?&nbsp;&nbsp;
+        br
+        input(type='text', name='province',id='province',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='pays') Pays ?&nbsp;&nbsp;
+        br
+        input(type='text', name='pays',id='pays',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='tel') Tel &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='tel',id='tel',onblur = 'return validerTel(this)',placeholder= 'XXX XXX-XXXX', tablindex='2',required='required', accesskey='n')        
+        br
+      input(type="submit", value="Enregistrer")
+      input(type='reset', value='annuller')
+  br        
+  a#im(href="/") retourner à l'accueil
