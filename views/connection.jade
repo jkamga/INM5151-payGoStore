@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/script.js')
+  body
+    h1 Connexion
+    form(methode = 'post')
+      fieldset
+        legend Connectez vous
+        label(for='pseudo') Pseudo &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='pseudo',id='pseudo',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='password') Mot de passe &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='password',id='password',onblur = 'return verifPass(this)', tablindex='1',required='required', accesskey='n')
+        &nbsp;     
+        
+      input(type="button", value="connexion", href = '#')
+      input(type='reset', value='annuller')
+      br
+      a(href="/enregistrement/nouveau_membre") S'enregistrer
+    br        
+    a#im(href="/") retourner à l'accueil
