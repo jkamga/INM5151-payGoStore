@@ -2,8 +2,9 @@ var mongo = require('mongodb');
 var BSON = mongo.BSONPure;
 var url = "/public/css/iamges/";
 module.exports = function(app, db) {
-
+    
     app.get("/", function(req, res) {
+        //inserer();
         db.collection('article', function(err, collection) {
             collection.find().toArray(function(err, objets) {
                 if(err) {
@@ -34,6 +35,65 @@ module.exports = function(app, db) {
         res.render('administrer');
     });
     
+    app.get("/connexion", function(req, res) {
+        res.render('connection');
+    });
+    
+    app.get("/article", function(req, res) {
+        var nom = "Dell Inspiron";
+        db.collection('article', function(err, collection) {
+            collection.find().toArray(function(err, objets) {
+                if(err) {
+                    console.log("Erreur sur la récupération de l'article!");
+                    res.send(500, 'Erreur interne');
+                }
+                var art;
+                   for(var i = 0; i < objets.length; i++) {
+                      if(nom == objets[i].nom){
+                       art = objets[i];
+                      }
+                   }
+                console.log(objets);
+             res.render("article",{ 'moArticle':art}); 
+            });
+        });
+    });
+    
+    var inserer = function() {
+            var date                 = new Date();
+            mois                     = date.getMonth() + 1;
+            jour                     = date.getDate();
+            if (mois < 10) mois      = "0" + mois;
+            if (jour < 10) jour      = "0" + jour;
+            
+             
+            var article = {
+            
+                "nom"              : "Dell Inspiron",
+                "prix"             : "$509.99",
+                "description"      : "Oridinateur de bureau",
+                "categorie"        : "Informatique",
+                "categorie"        : "DELL",
+                "model"            : "660s",
+                "url"              : 'css/images/slide-img2.jpg',
+                "dateDeCreation"   : '0',
+                "idDuCreateur"     : "kaizeurk",
+                "idArticle"        : ''
+            };
+            article.dateDeCreation = date.getFullYear() + "-" + mois + "-" + jour;
+            article.idArticle      = "" + article.dateDeCreation + article.nom ;
+            db.collection('article', function(err, collection) {
+                collection.find().toArray(function(err, objets) {
+                    if(err) {
+                        console.log('Erreur sur la récupération de wiki!');
+                        res.send(500, 'Erreur interne');
+                    }
+                    
+                    collection.insert(article, {safe:true}, function(err, result) {});
+                });
+         });
+
+    };
     
     app.use(function(req, res, next){
         res.setHeader('Content-Type');
@@ -48,6 +108,8 @@ creerArticle = function(art){
     article.prix             = art.getElementById("prix");
     article.description      = art.getElementById("desc");
     article.categorie        = art.getElementById("categorie");
+    article.categorie        = art.getElementById("marque");
+    article.categorie        = art.getElementById("model");
     article.url              = url + "" + art.getElementById();
     var date                 = new Date();
     mois                     = date.getMonth() + 1;
