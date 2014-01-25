@@ -10,7 +10,13 @@ html
       fieldset
         legend Informations sur le produit
         label(for='nom') nom de l'article &#1645?&nbsp;&nbsp;
+        br
         input(type='text', name='nom',id='nom',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='prix') Prix de l'article &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='prix',id='prix',onblur = 'return verifPrix(this)', placeholder='0.00', tablindex='1',required='required', accesskey='n')
+        &nbsp;$       
         br
         label(for='categorie') choisi une categorie de l'article
         select(size='1',name = 'categorie', id = 'categorie')
@@ -32,5 +38,6 @@ html
         input(type='file', name='Image', accept='image/pdf', id = 'image')
         br
       input(type="submit", value="Enregistrer")
+      input(type='reset', value='annuller')
     br        
     a#im(href="/") retourner à l'accueil

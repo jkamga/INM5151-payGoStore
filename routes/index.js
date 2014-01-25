@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 var BSON = mongo.BSONPure;
-
+var url = "/public/css/iamges/";
 module.exports = function(app, db) {
 
     app.get("/", function(req, res) {
@@ -41,3 +41,39 @@ module.exports = function(app, db) {
     });
 };
 
+creerArticle = function(art){
+    var article;
+    
+    article.nom              = art.getElementById("nom");
+    article.prix             = art.getElementById("prix");
+    article.description      = art.getElementById("desc");
+    article.categorie        = art.getElementById("categorie");
+    article.url              = url + "" + art.getElementById();
+    var date                 = new Date();
+    mois                     = date.getMonth() + 1;
+    jour                     = date.getDate();
+    if (mois < 10) mois      = "0" + mois;
+    if (jour < 10) jour      = "0" + jour;
+    article.dateDeCreation   = date.getFullYear() + "-" + mois + "-" + jour;
+    article.idDuCreateur     = art.getElementById();
+    article.idArticle        = "" + article.dateDeCreation + article.nom ;
+    
+  return arcticle;
+    
+}; 
+
+creerMembre = function (document){
+    var membre;
+       
+    membre.courriel      = document.getElementById(); 
+    if(document.getElementById()) membre.userName = document.getElementById();
+    else membre.userName = membre.courriel;
+    membre.nom           = document.getElementById();
+    membre.prenom        = document.getElementById();
+    membre.adresse       = document.getElementById();
+    membre.codePostal    = document.getElementById();
+    membre.pays          = document.getElementById();    
+    membre.sex           = document.getElementById();
+    membre.idMembre      = membre.courriel;
+    membre.statut        = 'membre'; //M pour membre,  C pour commercial, A pour admin
+};
