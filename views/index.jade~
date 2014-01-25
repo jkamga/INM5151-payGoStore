@@ -1,0 +1,446 @@
+doctype
+html
+  head
+    title payGoStore.com
+    meta(http-equiv='Content-type', content='text/html; charset=utf-8')
+    link(rel='shortcut icon', href='css/images/favicon.ico')
+    link(rel='stylesheet', href='css/style.css', type='text/css', media='all')
+    script(src='js/jquery-1.6.2.min.js', type='text/javascript', charset='utf-8')
+    //if IE 6
+    script(src='js/DD_belatedPNG-min.js', type='text/javascript', charset='utf-8')
+    script(src='js/jquery.jcarousel.min.js', type='text/javascript', charset='utf-8')
+    script(src='js/functions.js', type='text/javascript', charset='utf-8')
+  body
+    // Begin Wrapper
+    #wrapper
+      // Begin Search
+      #search
+        .shell
+          form(action='#', method='get', accept-charset='utf-8')
+            .container
+              input.blink(type='text', title='Mot cle...', placeholder='Mot cle...')
+            input.search-button(type='submit', value='Submit')
+          .cl  
+      // End Search
+      // Begin Header
+      #header.shell
+        h1#logo
+          a.notext(href='index.jade', title='PayGoStore') payGoStore
+      // End Header
+      // Begin Navigation
+      #navigation
+        .shell
+          ul
+            li
+              a(href='#', title='Acceuil') Acceuil
+            li
+              a(href='#', title='Offres speciales') Offres speciales
+            li
+              a(href='#', title='Connexion') Connexion
+            li
+              a(href='#', title='Compte') Compte
+            li
+              a(href='#', title='Panier') Panier
+            li
+              a(href='#', title='Caisse') Caisse
+            li
+              a(href='#', title='Nous joindre') Nous joindre
+          .cl  
+      // End Navigation
+      // Begin Slider
+      #slider
+        .slider-outer
+          .slider-inner.shell
+            // Begin Slider Items
+            ul.slider-items
+              li
+                img(src='css/images/slide-img1.jpg', alt='Slide Image 1')
+                .slide-entry
+                  h2  All Categories  Computers 
+                  h3
+                    | Printer Accessories Laptop Bags, Cases & Covers Batteries & Chargers Desktop Accessories Microphones See More...
+                  p  
+                a.more(href='#', title='ConsulterArticle') Consulter
+              li
+                img(src='css/images/slide-img2.jpg', alt='Slide Image 2')
+                .slide-entry
+                  h2  Dell Inspiron 660s i660s-5390BK Dell 
+                  h3 $509.99  Save: $90.00 (15%) 
+                  p  
+                a.more(href='#', title='ConsulterArticle') Consulter
+              li
+                img(src='css/images/slide-img3.jpg', alt='Slide Image 3')
+                .slide-entry
+                  h2 Best price warented
+                  h3 save up to 35% 
+                  p justo tu t'en sortira
+                a.more(href='#', title='ConsulterArticle') Consulter
+              li
+                img(src='css/images/slide-img4.jpg', alt='Slide Image 4')
+                .slide-entry
+                  h2 Great deals on Computers!
+                  h3 See in-store for more amazing unadvertised deals on desktop and laptop
+                  p justo be careful
+                a.more(href='#', title='ConsulterArticle') Consulter
+              li
+                img(src='css/images/slide-img5.jpg', alt='Slide Image 5')
+                .slide-entry
+                  h2 Now accepting PayPal 
+                  h3 Fast, FREE Shipping*
+                  p buy now and pickup when you want
+                a.more(href='#', title='ConsulterArticle') Consulter
+            // End Slider Items
+            .cl  
+            .slider-controls
+        .cl  
+      // End Slider
+      // Begin Main
+      #main
+        // Begin Inner
+        .inner
+          .shell
+            // Begin Left Sidebar
+            #left-sidebar.sidebar
+              ul
+                li.widget
+                  h2 Categories
+                  .widget-entry
+                    ul
+                      li
+                        a(href='#', title='Desktops')
+                          span Oridateurs de Bureau
+                      li
+                        a(href='#', title='Laptops & Notebooks')
+                          span Laptops & Notebooks
+                      li
+                        a(href='#', title='Accessoires')
+                          span Accessoires
+                      li
+                        a(href='#', title='Logiciels')
+                          span Logiciels
+                      li
+                        a(href='#', title='Telephones & PDAs')
+                          span Telephones & PDAs
+                      li
+                        a(href='#', title='Appareils photo')
+                          span Appareils photo
+                      li.last
+                        a(href='#', title='Lecteurs MP3')
+                          span Lecteurs MP3
+                li.widget
+                  h2 Informations 
+                  .widget-entry
+                    ul
+                      li
+                        a(href='#', title='A Propos de nous') A propos de nous
+                             
+                      li
+                        a(href='#', title='Polique de Confidentialite') Polique  Confidentialite
+                                   
+                      li
+                        a(href='#', title='Conditions Generales') Conditions Generales
+                          
+                      li
+                        a(href='#', title='Nous Joindre') Nous Joindre
+                              
+                      li.last
+                        a(href='#', title='Plan du site') Plan du site
+                          
+                li.widget.select-widget
+                  h2 Marques
+                  .widget-entry
+                    .selectbox
+                      span.currentItem
+                        | ---
+                        span Selectionnez SVP
+                        | ---
+                      
+                      select
+                        option(value='Selectionnez SVP!', selected='selected') Selectionnez SVP!
+                        option(value='toshiba') Toshiba
+                        option(value='acer') Acer
+                        option(value='dell') Dell
+                    .cl  
+                li.widget
+                  h2 Carte d'Achat
+                  .widget-entry
+                    a.items(href='#', title='Articles') 0 articles
+            // End Sidebar
+            // Begin Content
+            #content
+              // Begin Post
+              .post
+                h2
+                  | Bienvenue A payGoStore
+                  span.title-bottom  
+                p
+                  | Les produits informatiques et accessoires passent pour etre les produits les plus convoites depuis un certain temps. Surtout lorsqu’ils sont  de plus en plus offerts dans des magasins virtuels. la facilite de trouver en quelques clics ce que l'on desire et de se faire livrer a domicile sans avoir a faire le tour des magasins de la ville, constituent un gain enorme de temps et d'argent. Cependant, dans plus d'un tier des cas, l'insatisfaction est criarde. Nous trouvons que les conseils offerts ca et la, sur les sites de commerce en ligne sont jusqu'ici insufusants. en tant qu'informaticiens, notre equipe vous propose une gamme variee et personalisee en fontion de vos demandes. en plus de vous offrir un suivi en temps reel de l'evolution de la livraison de vos de marchandises. nous proposons aussi de vous offrir des produits logiciels fiables et securitaires concus pour repondre a vos diverses preocupations, pour vos faciliter la vie. payGoStore propose des produits informatiques et accessoires de tout genre. Vous en trouverez quelques exemples sur le site. Si vous le souhaitez, nous pouvons livrer pour vous dans de beaux emballages cadeaux.
+              // End Post
+              // Begin Products
+              #products
+                h2
+                  | Produits Recents
+                  span.title-bottom  
+                .product
+                  a(href='#', title='Product 1')
+                    span.title Product Name
+                    img(src='css/images/product-img1.jpg', alt='Product Image 1')
+                    span.number Product 14
+                    span.price
+                      span $
+                      | 587.50
+                .product
+                  a(href='#', title='Product 2')
+                    span.title Product Name
+                    img(src='css/images/product-img2.jpg', alt='Product Image 2')
+                    span.number Product 17
+                    span.price
+                      span $
+                      | 1587.50
+                .product.last
+                  a(href='#', title='Product 3')
+                    span.title Product Name
+                    img(src='css/images/product-img3.jpg', alt='Product Image 3')
+                    span.number Product 22
+                    span.price
+                      span $
+                      | 1249.99
+                .cl  
+                .product
+                  a(href='#', title='Product 4')
+                    span.title Product Name
+                    img(src='css/images/product-img4.jpg', alt='Product Image 4')
+                    span.number Product 9
+                    span.price
+                      span $
+                      | 199.99
+                .product
+                  a(href='#', title='Product 5')
+                    span.title Product Name
+                    img(src='css/images/product-img5.jpg', alt='Product Image 5')
+                    span.number Product 21
+                    span.price
+                      span $
+                      | 259.50
+                .product.last
+                  a(href='#', title='Product 6')
+                    span.title Product Name
+                    img(src='css/images/product-img6.jpg', alt='Product Image 6')
+                    span.number Product 2
+                    span.price
+                      span $
+                      | 785.20
+                .cl  
+                .product
+                  a(href='#', title='Product 7')
+                    span.title Product Name
+                    img(src='css/images/product-img7.jpg', alt='Product Image 7')
+                    span.number Product 115
+                    span.price
+                      span $
+                      | 99.99
+                .product
+                  a(href='#', title='Product 8')
+                    span.title Product Name
+                    img(src='css/images/product-img8.jpg', alt='Product Image 8')
+                    span.number Product 97
+                    span.price
+                      span $
+                      | 199.99
+                .product.last
+                  a(href='#', title='Product 9')
+                    span.title Product Name
+                    img(src='css/images/product-img9.jpg', alt='Product Image 9')
+                    span.number Product 24
+                    span.price
+                      span $
+                      | 688.50
+                .cl  
+              // End Products
+            // End Content
+            // Begin Right Sidebar
+            #right-sidebar.sidebar
+              ul
+                li.widget.products-box
+                  h2 Meilleures ventes
+                  .widget-entry
+                    ul
+                      li
+                        a(href='#', title='Side Product 1')
+                          img(src='css/images/side-img1.jpg', alt='Product Side Image 1')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 117.50
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 2')
+                          img(src='css/images/side-img2.jpg', alt='Product Side Image 2')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 94.00
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 3')
+                          img(src='css/images/side-img3.jpg', alt='Product Side Image 3')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 1,175.00
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 4')
+                          img(src='css/images/side-img4.jpg', alt='Product Side Image 4')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 117.50
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 5')
+                          img(src='css/images/side-img5.jpg', alt='Product Side Image 5')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 1,175.00
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 6')
+                          img(src='css/images/side-img6.jpg', alt='Product Side Image 6')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 587.50
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 7')
+                          img(src='css/images/side-img7.jpg', alt='Product Side Image 7')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 1,175.00
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 8')
+                          img(src='css/images/side-img8.jpg', alt='Product Side Image 8')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 117.50
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 9')
+                          img(src='css/images/side-img9.jpg', alt='Product Side Image 9')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 118.68
+                          span.cl  
+                      li
+                        a(href='#', title='Side Product 10')
+                          img(src='css/images/side-img10.jpg', alt='Product Side Image 10')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 235.00
+                          span.cl  
+                    .cl  
+                li.widget.products-box
+                  h2 Soldes
+                  .widget-entry
+                    ul
+                      li
+                        a(href='#', title='Featured Product 1')
+                          img(src='css/images/featured-img1.jpg', alt='Product Featured Image 1')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 117.50
+                          span.cl  
+                      li
+                        a(href='#', title='Featured Product 2')
+                          img(src='css/images/featured-img2.jpg', alt='Product Featured Image 2')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 94.00
+                          span.cl  
+                      li
+                        a(href='#', title='Featured Product 3')
+                          img(src='css/images/featured-img3.jpg', alt='Product Featured Image 3')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 1,175.00
+                          span.cl  
+                      li
+                        a(href='#', title='Featured Product 4')
+                          img(src='css/images/featured-img4.jpg', alt='Product Featured Image 4')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 117.50
+                          span.cl  
+                      li
+                        a(href='#', title='Featured Product 5')
+                          img(src='css/images/featured-img5.jpg', alt='Product Featured Image 5')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 1,175.00
+                          span.cl  
+                      li
+                        a(href='#', title='Featured Product 6')
+                          img(src='css/images/featured-img6.jpg', alt='Product Featured Image 6')
+                          span.info
+                            span.title Product Name
+                            span.price
+                              span $
+                              | 587.50
+                          span.cl  
+                    .cl  
+            // End Sidebar
+            .cl  
+        // End Inner
+      // End Main
+      // Begin Footer
+      #footer
+        .shell
+          p.bottom-menu
+            a(href='home.html', title='Acceuil') Acceuil
+            span |
+            a(href='#', title='Offres Speciales') Offres Speciales
+            span |
+            a(href='#', title='Connexion') Connexion
+            span |
+            a(href='#', title='Compte') Compte
+            span |
+            a(href='#', title='Panier') Panier
+            span |
+            a(href='#', title='Caisse') Caisse
+            span |
+            a(href='#', title='Nous joindre') Nous joindre
+          p
+            | Copyright © payGoStore  2013. Design by:(justin F. kamga && Emmanuel F. Kome)
+            a(href='#', title='payGo') payGoStore
+            | . All Rights Reserved.
+          .cl  
+      // End Footer
+    // End Wrapper
+
