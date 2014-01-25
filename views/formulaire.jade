@@ -1,0 +1,44 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/script.js')
+  body
+    h1 bienvenu renseigner l'article
+    form(methode = 'post', action = 'enregistrement')
+      fieldset
+        legend Informations sur le produit
+        label(for='nom') nom de l'article &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='nom',id='nom',onblur = 'return verifChamp(this)', tablindex='1',required='required', accesskey='n')        
+        br
+        label(for='prix') Prix de l'article &#1645?&nbsp;&nbsp;
+        br
+        input(type='text', name='prix',id='prix',onblur = 'return verifPrix(this)', placeholder='0.00', tablindex='1',required='required', accesskey='n')
+        &nbsp;$       
+        br
+        label(for='categorie') choisi une categorie de l'article
+        br
+        select(size='1',name = 'categorie', id = 'categorie')
+          option(value='')
+          option(value='Cinema') Cinema
+          option(value='Cuisine') Cuisine
+          option(value='Education') Education
+          option(value='Enseignement') Enseignement
+          option(value='Information') Information
+          option(value='Informatique') Informatique 
+          option(value='Lingerie') Lingerie
+          option(value='Menage') Menage
+        br
+        label(for='desc') rediger votre article &#1645?: &nbsp;&nbsp;
+        br
+        textarea(accesskey='d',rows='20' ,cols='100', name='desc',onblur = 'return verifChamp(this)', placeholder='redigez votre article ici...', id = 'desc',required='required')
+        br
+        label(for='Image') inclure une image ou un fichier: &nbsp;&nbsp;
+        input(type='file', name='Image', accept='image/pdf', id = 'image')
+        br
+      input(type="submit", value="Enregistrer")
+      input(type='reset', value='annuller')
+    br        
+    a#im(href="/") retourner à l'accueil
