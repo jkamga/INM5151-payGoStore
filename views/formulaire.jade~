@@ -19,7 +19,6 @@ html
         &nbsp;$       
         br
         label(for='categorie') choisi une categorie de l'article
-        br
         select(size='1',name = 'categorie', id = 'categorie')
           option(value='')
           option(value='Cinema') Cinema

@@ -36,6 +36,25 @@ sendSex = function(sexe) {
   }
 };
 
+verifPrix = function(prix){
+  var patron, vExpression;
+  patron = /^[0-9]+.[0-9]{2}$/;
+  vExpression = new RegExp(patron);
+  if (vExpression.test(prix.value)) {
+    if(prix <= 0.00){
+      alert("Saisissez la date avec ce format: yyyy-mm-dd");
+      surligne(prix, true);
+     return false;  
+    }
+    surligne(prix, false);
+    return true;
+  } else {
+    alert("Saisissez la date avec ce format: yyyy-mm-dd");
+    surligne(prix, true);
+    return false;
+  }
+};
+
 surligne = function(champ, erreur) {
   if (erreur) {
     return champ.style.backgroundColor = "#fba";
