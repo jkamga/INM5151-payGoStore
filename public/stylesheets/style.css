@@ -1,7 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color :gray;
+  background-color :#D3D3D3;
+  /*background: #2a2a2a url('images/body-bg.png') repeat-x 0 18px;*/
 }
 
 a {
