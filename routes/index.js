@@ -38,7 +38,17 @@ module.exports = function(app, db) {
     app.get("/connexion", function(req, res) {
         res.render('connection');
     });
-    
+    app.get("/contact", function(req, res) {
+        res.render('contact');
+    });
+    app.get("/AproposDeNous", function(req, res) {
+        res.render('AproposDeNous');
+    });
+    app.get("/confidentialite", function(req, res) {
+        res.render('confidentialite');
+    });
+
+
     app.get("/article", function(req, res) {
         var nom = "Dell Inspiron";
         db.collection('article', function(err, collection) {

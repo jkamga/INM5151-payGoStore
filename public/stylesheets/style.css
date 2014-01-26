@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color :
+  background-color :gray;
 }
 
 a {
@@ -16,7 +16,7 @@ td{
 h1{
     color: blue;
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
 
 }
 #lis{
