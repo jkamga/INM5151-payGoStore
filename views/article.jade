@@ -12,7 +12,7 @@ html
         li nom : #{moArticle.nom}&nbsp;  #{moArticle.nom}
         li date de publication: #{moArticle.dateDeCreation}
         li categorie : #{moArticle.categorie}
-        li categorie : #{moArticle.marque}  
+        li Marque : #{moArticle.marque}  
    p
      | image
      img(src='#{moArticle.url}', alt='Slide Image 1')
@@ -23,5 +23,5 @@ html
    p  
      a(href="/") retourn a la page d'acceuille
    p 
-     a(href="/admin/#{moArticle.id}", attribut=moArticle.nom) modifier ce dossier        
+     a(href="/admin/mettre_a_jour", attribut=moArticle.nom) modifier ce dossier        
    

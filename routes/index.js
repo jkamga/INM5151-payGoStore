@@ -1,6 +1,7 @@
 var mongo = require('mongodb');
 var BSON = mongo.BSONPure;
 var url = "/public/css/iamges/";
+var tab_categorie = ['Desktops','Laptops','Accessoires','Logiciels','PDAs','photo','LecteursMP3'];
 module.exports = function(app, db) {
     
     app.get("/", function(req, res) {
@@ -18,7 +19,65 @@ module.exports = function(app, db) {
        
     });
     
-       
+    app.get("/categorie/:idCategori", function(req, res) {
+        //var cat = res.params.idCategori;
+        db.collection('article', function(err, collection) {
+            collection.find().toArray(function(err, objets) {
+                if(err) {
+                    console.log("Erreur sur la récupération de l'article!");
+                    res.send(500, 'Erreur interne');
+                }
+             res.render("categorie",{ 'donnee':objets}); 
+            });
+        });
+    });
+    
+    app.put('/sauvegarde', function(req, res) {
+        var objectSauve = req.body;
+        var article = req.body;
+        var id = article.id;
+        var art;
+        db.collection('article', function(err, collection) {
+            collection.update( 
+                 { idArticle : article.id},
+                 { $set: {  
+                          nom: article.nom,
+                          prix: article.prix,
+                          description: article.description,
+                          marque: article.marque,
+                          model: article.model,
+                          url: article.urlww  
+                          }
+                 },
+                 function(err, collection){
+                    console.log("on y est: ");
+                 } 
+            );
+         });
+
+         res.send(200,article.id.toString());
+    });
+    
+    app.get("/admin/mettre_a_jour", function(req, res) {
+        var nom = "Dell Inspiron";
+        db.collection('article', function(err, collection) {
+            collection.find().toArray(function(err, objets) {
+                if(err) {
+                    console.log("Erreur sur la récupération de l'article!");
+                    res.send(500, 'Erreur interne');
+                }
+                var art;
+                   for(var i = 0; i < objets.length; i++) {
+                      if(nom == objets[i].nom){
+                       art = objets[i];
+                      }
+                   }
+                console.log(objets);
+             res.render("miseAJourArticle",{ 'monArticle':art}); 
+            });
+        });
+    });
+      
     app.get("/admin/publier", function(req, res) {
         res.render('formulaire');
     });
@@ -83,7 +142,7 @@ module.exports = function(app, db) {
                 "prix"             : "$509.99",
                 "description"      : "Oridinateur de bureau",
                 "categorie"        : "Informatique",
-                "categorie"        : "DELL",
+                "marque"           : "DELL",
                 "model"            : "660s",
                 "url"              : 'css/images/slide-img2.jpg',
                 "dateDeCreation"   : '0',
@@ -112,14 +171,14 @@ module.exports = function(app, db) {
 };
 
 creerArticle = function(art){
-    var article;
+    var article = {};
     
     article.nom              = art.getElementById("nom");
     article.prix             = art.getElementById("prix");
-    article.description      = art.getElementById("desc");
+    article.description      = art.getElementById("desc");    
     article.categorie        = art.getElementById("categorie");
-    article.categorie        = art.getElementById("marque");
-    article.categorie        = art.getElementById("model");
+    article.marque           = art.getElementById("marque");
+    article.model            = art.getElementById("model");
     article.url              = url + "" + art.getElementById();
     var date                 = new Date();
     mois                     = date.getMonth() + 1;
@@ -148,4 +207,9 @@ creerMembre = function (document){
     membre.sex           = document.getElementById();
     membre.idMembre      = membre.courriel;
     membre.statut        = 'membre'; //M pour membre,  C pour commercial, A pour admin
+};
+
+determinerCategori = function (cat){
+    for(var i = 0; i < tab_categorie.length;i++)
+       if(tab_categorie[i] == cat) return i;
 };

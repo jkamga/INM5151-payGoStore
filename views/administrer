@@ -6,4 +6,12 @@ html
     script(src='/javascripts/script.js')
   body
     h1 vous etes connecté en tant que administrateur
+    #list
+      ul
+        li a(href = '#') Admistration
+	li a(href = '#') Utilisateur
+	li a(href = '#') Article
+	li a(href = '#') Commentaire
+    #insert
+      
     a#img(href="/membre/profile") Profile utilisateur

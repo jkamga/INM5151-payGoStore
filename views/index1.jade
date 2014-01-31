@@ -1,57 +1,64 @@
-doctype
-html
-  head
+head
     title payGoStore.com
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
     link(rel='shortcut icon', href='css/images/favicon.ico')
     link(rel='stylesheet', href='css/style.css', type='text/css', media='all')
     script(src='js/jquery-1.6.2.min.js', type='text/javascript', charset='utf-8')
     //if IE 6
-    script(src='js/DD_belatedPNG-min.js', type='text/javascript', charset='utf-8')
+      script(src='js/DD_belatedPNG-min.js', type='text/javascript', charset='utf-8')
     script(src='js/jquery.jcarousel.min.js', type='text/javascript', charset='utf-8')
     script(src='js/functions.js', type='text/javascript', charset='utf-8')
   body
-    // Begin Wrapper
+    //
+       Begin Wrapper 
     #wrapper
-      // Begin Search
+      //
+         Begin Search 
       #search
         .shell
           form(action='#', method='get', accept-charset='utf-8')
             .container
-              input.blink(type='text', title='Mot cle...', placeholder='Mot cle...')
+              input.blink(type='text', title='Keywords...', placeholder='products and help')
             input.search-button(type='submit', value='Submit')
           .cl  
-      // End Search
-      // Begin Header
+      //
+         End Search 
+      //
+         Begin Header 
       #header.shell
         h1#logo
-          a.notext(href='/', title='PayGoStore') payGoStore
-      // End Header
-      // Begin Navigation
+          a.notext(href='home.html', title='PayGo Store') payGo Store
+      //
+         End Header 
+      //
+         Begin Navigation 
       #navigation
         .shell
           ul
             li
-              a(href='/', title='Acceuil') Acceuil
+              a(href='home.html', title='Home') Home
             li
-              a(href='#', title='Offres speciales') Offres speciales
+              a(href='#', title='Special Offers') Special Offers
             li
-              a(href='/connexion', title='Connexion') Connexion
+              a(href='#', title='Log In') Log In
             li
-              a(href='/enregistrement/nouveau_membre', title='Compte') Compte
+              a(href='#', title='Account') Account
             li
-              a(href='#', title='Panier') Panier
+              a(href='#', title='Basket') Basket
             li
-              a(href='#', title='Caisse') Caisse
+              a(href='#', title='Checkout') Checkout
             li
-              a(href='/contact', title='Nous joindre') Nous joindre
+              a(href='#', title='Contact') Contact
           .cl  
-      // End Navigation
-      // Begin Slider
+      //
+         End Navigation 
+      //
+         Begin Slider 
       #slider
         .slider-outer
           .slider-inner.shell
-            // Begin Slider Items
+            //
+               Begin Slider Items 
             ul.slider-items
               li
                 img(src='css/images/slide-img1.jpg', alt='Slide Image 1')
@@ -59,43 +66,52 @@ html
                   h2  All Categories  Computers 
                   h3
                     | Printer Accessories Laptop Bags, Cases & Covers Batteries & Chargers Desktop Accessories Microphones See More...
-                 a.more(href='/article', title='ConsulterArticle') Consulter
+                  p  
+                a.more(href='#', title='View More') View More
               li
                 img(src='css/images/slide-img2.jpg', alt='Slide Image 2')
                 .slide-entry
                   h2  Dell Inspiron 660s i660s-5390BK Dell 
-                  h3 $509.99  Save: $90.00 (15%)  
-                a.more(href='#', title='ConsulterArticle') Consulter
+                  h3 $509.99  Save: $90.00 (15%) 
+                  p  
+                a.more(href='#', title='View More') View More
               li
                 img(src='css/images/slide-img3.jpg', alt='Slide Image 3')
                 .slide-entry
                   h2 Best price warented
                   h3 save up to 35% 
-                a.more(href='#', title='ConsulterArticle') Consulter
+                  p justo tu t'en sortira
+                a.more(href='#', title='View More') View More
               li
                 img(src='css/images/slide-img4.jpg', alt='Slide Image 4')
                 .slide-entry
                   h2 Great deals on Computers!
                   h3 See in-store for more amazing unadvertised deals on desktop and laptop
-                a.more(href='#', title='ConsulterArticle') Consulter
+                  p justo be careful
+                a.more(href='#', title='View More') View More
               li
                 img(src='css/images/slide-img5.jpg', alt='Slide Image 5')
                 .slide-entry
                   h2 Now accepting PayPal 
                   h3 Fast, FREE Shipping*
                   p buy now and pickup when you want
-                a.more(href='#', title='ConsulterArticle') Consulter
-            // End Slider Items
+                a.more(href='#', title='View More') View More
+            //
+               End Slider Items 
             .cl  
             .slider-controls
         .cl  
-      // End Slider
-      // Begin Main
+      //
+         End Slider 
+      //
+         Begin Main 
       #main
-        // Begin Inner
+        //
+           Begin Inner 
         .inner
           .shell
-            // Begin Left Sidebar
+            //
+               Begin Left Sidebar 
             #left-sidebar.sidebar
               ul
                 li.widget
@@ -103,91 +119,96 @@ html
                   .widget-entry
                     ul
                       li
-                        a(href='/categorie/Desktops', title='Desktops')
-                          span Oridateurs de Bureau
+                        a(href='#', title='Desktops')
+                          span Desktops
                       li
-                        a(href='/categorie/Laptops', title='Laptops & Notebooks')
+                        a(href='#', title='Laptops & Notebooks')
                           span Laptops & Notebooks
                       li
-                        a(href='/categorie/Accessoires', title='Accessoires')
-                          span Accessoires
+                        a(href='#', title='Components')
+                          span Components
                       li
-                        a(href='/categorie/Logiciels', title='Logiciels')
-                          span Logiciels
+                        a(href='#', title='Software')
+                          span Software
                       li
-                        a(href='/categorie/PDAs', title='Telephones & PDAs')
-                          span Telephones & PDAs
+                        a(href='#', title='Phones & PDAs')
+                          span Phones & PDAs
                       li
-                        a(href='/categorie/photo', title='Appareils photo')
-                          span Appareils photo
+                        a(href='#', title='Cameras')
+                          span Cameras
                       li.last
-                        a(href='/categorie/LecteursMP3', title='Lecteurs MP3')
-                          span Lecteurs MP3
+                        a(href='#', title='MP3 Players')
+                          span MP3 Players
                 li.widget
-                  h2 Informations 
+                  h2 Information
                   .widget-entry
                     ul
                       li
-                        a(href='/AproposDeNous', title='A Propos de nous') A propos de nous
-                             
+                        a(href='#', title='About Us')
+                          span About Us
                       li
-                        a(href='/confidentialite', title='Polique de Confidentialite') Polique  Confidentialite
-                                   
+                        a(href='#', title='Privacy Policy')
+                          span Privacy Policy
                       li
-                        a(href='#', title='Conditions Generales') Conditions Generales
-                          
+                        a(href='#', title='Terms & Conditions')
+                          span Terms & Conditions
                       li
-                        a(href='/contact', title='Nous Joindre') Nous Joindre
-                              
+                        a(href='#', title='Contact Us')
+                          span Contact Us
                       li.last
-                        a(href='#', title='Plan du site') Plan du site
-                          
+                        a(href='#', title='Site Map')
+                          span Site Map
                 li.widget.select-widget
-                  h2 Marques
+                  h2 Brands
                   .widget-entry
                     .selectbox
                       span.currentItem
                         | ---
-                        span Selectionnez SVP
+                        span Please Select
                         | ---
                       .list
                         ul
                           li.active
-                            a(href='#', title='Selectionnez SVP!') Selectionnez SVP
+                            a(href='#', title='Please Select') Please Select
                           li
-                            a(href='#', title='Toshiba') Toshiba
+                            a(href='#', title='Brand 1') Brand 1
                           li
-                            a(href='#', title='Acer') Acer
+                            a(href='#', title='Brand 2') Brand 2
                           li
-                            a(href='#', title='Dell') Dell
+                            a(href='#', title='Brand 3') Brand 3
                       select
-                        option(value='Selectionnez SVP!', selected='selected') Selectionnez SVP!
-                        option(value='toshiba') Toshiba
-                        option(value='acer') Acer
-                        option(value='dell') Dell
+                        option(value='option', selected='selected') Please Select
+                        option(value='option1') Brand 1
+                        option(value='option2') Brand 2
+                        option(value='option3') Brand 3
                     .cl  
                 li.widget
-                  h2 Carte d'Achat
+                  h2 Shopping Card
                   .widget-entry
-                    a.items(href='#', title='Articles') 0 articles
-            // End Sidebar
-            // Begin Content
+                    a.items(href='#', title='Shopping Card Items') 0 items
+            //
+               End Sidebar 
+            //
+               Begin Content 
             #content
-              // Begin Post
+              //
+                 Begin Post 
               .post
                 h2
-                  | Bienvenue A payGoStore
+                  | Welcome to payGoStore
                   span.title-bottom  
                 p
-                  | Les produits informatiques et accessoires passent pour etre les produits les plus convoites depuis un certain temps. Surtout lorsqu’ils sont  de plus en plus offerts dans des magasins virtuels. la facilite de trouver en quelques clics ce que l'on desire et de se faire livrer a domicile sans avoir a faire le tour des magasins de la ville, constituent un gain enorme de temps et d'argent. Cependant, dans plus d'un tier des cas, l'insatisfaction est criarde. Nous trouvons que les conseils offerts ca et la, sur les sites de commerce en ligne sont jusqu'ici insufusants. en tant qu'informaticiens, notre equipe vous propose une gamme variee et personalisee en fontion de vos demandes. en plus de vous offrir un suivi en temps reel de l'evolution de la livraison de vos de marchandises. nous proposons aussi de vous offrir des produits logiciels fiables et securitaires concus pour repondre a vos diverses preocupations, pour vos faciliter la vie. payGoStore propose des produits informatiques et accessoires de tout genre. Vous en trouverez quelques exemples sur le site. Si vous le souhaitez, nous pouvons livrer pour vous dans de beaux emballages cadeaux.
-              // End Post
-              // Begin Products
+                  | Maecenas eget purus arcu, in vestibulum libero. Aliquam facilisis rhoncus eros, quis rutrum dolor tincid-unt ac. Duis vel consequat justo. Praesent felis mauris, ultricies nec tincidunt vitae, dignissim ac risus. Suspendisse in sem sit amet quam adipiscing interdum. Cras ac lacinia enim. Fusce eros odio, lacinia id egestas id, adipiscing a erat. Integer lacinia augue quis eros condimentum ac varius nunc lacinia.
+              //
+                 End Post 
+              //
+                 Begin Products 
               #products
                 h2
-                  | Produits Recents
+                  | Latest Products
                   span.title-bottom  
                 .product
-                  a(href='/article', title='Product 1')
+                  a(href='#', title='Product 1')
                     span.title Product Name
                     img(src='css/images/product-img1.jpg', alt='Product Image 1')
                     span.number Product 14
@@ -261,13 +282,16 @@ html
                       span $
                       | 688.50
                 .cl  
-              // End Products
-            // End Content
-            // Begin Right Sidebar
+              //
+                 End Products 
+            //
+               End Content 
+            //
+               Begin Right Sidebar 
             #right-sidebar.sidebar
               ul
                 li.widget.products-box
-                  h2 Meilleures ventes
+                  h2 Bestsellers
                   .widget-entry
                     ul
                       li
@@ -362,7 +386,7 @@ html
                           span.cl  
                     .cl  
                 li.widget.products-box
-                  h2 Soldes
+                  h2 Feature
                   .widget-entry
                     ul
                       li
@@ -420,32 +444,38 @@ html
                               | 587.50
                           span.cl  
                     .cl  
-            // End Sidebar
+            //
+               End Sidebar 
             .cl  
-        // End Inner
-      // End Main
-      // Begin Footer
+        //
+           End Inner 
+      //
+         End Main 
+      //
+         Begin Footer 
       #footer
         .shell
           p.bottom-menu
-            a(href='/', title='Acceuil') Acceuil
+            a(href='home.html', title='Home') Home
             span |
-            a(href='#', title='Offres Speciales') Offres Speciales
+            a(href='#', title='Special Offers') Special Offers
             span |
-            a(href='/connexion', title='Connexion') Connexion
+            a(href='#', title='Log In') Log In
             span |
-            a(href='/enregistrement/nouveau_membre', title='Compte') Compte
+            a(href='#', title='Account') Account
             span |
-            a(href='#', title='Panier') Panier
+            a(href='#', title='Basket') Basket
             span |
-            a(href='#', title='Caisse') Caisse
+            a(href='#', title='Checkout') Checkout
             span |
-            a(href='/contact', title='Nous joindre') Nous joindre
+            a(href='#', title='Contact') Contact
           p
-            | Copyright © payGoStore  2014. Designed by:(justin F. kamga && Emmanuel F. Kome)
-            a(href='/', title='payGo') payGoStore
+            | Copyright © pGo Store 2013. Design by:
+            a(href='#', title='payGo') payGo store
             | . All Rights Reserved.
           .cl  
-      // End Footer
-    // End Wrapper
+      //
+         End Footer 
+    //
+       End Wrapper 
 

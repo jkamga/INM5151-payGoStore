@@ -1,4 +1,4 @@
-var buildObject, displayResult, enregistrer, registerToServer, save, saveToServer, sendSex, surligne, validerDate, validerTel, verifChamp, verifModifChamp, verifSaveChamp;
+var buildObject, displayResult, enregistrer, envoyerVerServer, save, saveToServer, sendSex, surligne, validerDate, validerTel, verifChamp, verifModifChamp, verifSaveChamp;
 
 validerTel = function(tel) {
   var patron, vExpression;
@@ -74,3 +74,48 @@ verifChamp = function(champ) {
   }
 };
 
+verifModifChamp = function(corps){
+  saveToServer  
+
+};
+
+enregistrer = function() {
+  var objectToSave;
+  objectToSave = buildObject();
+  return envoyerVerServer(objectToSave, displayResult);
+};
+
+buildObject = function() {
+  var date, desc, jour, mois, para, premier, result, second, tail, temp;
+  var article = {};
+    article.nom              = document.getElementById("nom");
+    article.prix             = document.getElementById("prix");
+    article.description      = document.getElementById("desc");    
+    article.categorie        = document.getElementById("categorie");
+    article.marque           = document.getElementById("marque");
+    article.model            = document.getElementById("model");
+    article.url              = document.getElementById("url");
+    article.idArticle        = document.getElementById("idArticle");
+  return article;
+};
+
+displayResult = function(savedObject) {
+  return console.log("Document sauvegardé : " + JSON.stringify(savedObject));
+};
+
+envoyerVerServer = function(objectToSave, callback) {
+  var jsonData, xhr;
+  xhr = new XMLHttpRequest();
+  console.log("dans save");
+  xhr.open("PUT", "/sauvegarde", true);
+  jsonData = JSON.stringify(objectToSave);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(jsonData);
+  return xhr.onreadystatechange = function() {
+    var ent;
+    if (xhr.readyState === 4 && xhr.status !== 500) {
+      ent = parseInt(xhr.responseText);
+      return window.location.replace("/" + ent);
+    }
+  };
+};

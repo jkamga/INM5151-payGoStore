@@ -1,0 +1,34 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Article 
+  body#artic
+    h1 Titre : Catégorie choisi
+    each article in donnee
+       a(href="/article", attribut=article.titre) #{article.nom}
+       
+// Begin Footer
+   
+  .shell
+      p.bottom-menu
+        a(href='/', title='Acceuil') Acceuil
+        span |
+        a(href='#', title='Offres Speciales') Offres Speciales
+        span |
+        a(href='/connexion', title='Connexion') Connexion
+        span |
+        a(href='/enregistrement/nouveau_membre', title='Compte') Compte
+        span |
+        a(href='#', title='Panier') Panier
+        span |
+        a(href='#', title='Caisse') Caisse
+        span |
+        a(href='/contact', title='Nous joindre') Nous joindre
+      p
+        | Copyright © payGoStore  2014. Designed by:(justin F. kamga && Emmanuel F. Kome)
+        a(href='/', title='payGo') payGoStore
+        | . All Rights Reserved.
+      .cl  
+  // End Footer
