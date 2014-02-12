@@ -42,14 +42,14 @@ verifPrix = function(prix){
   vExpression = new RegExp(patron);
   if (vExpression.test(prix.value)) {
     if(prix <= 0.00){
-      alert("Saisissez la date avec ce format: yyyy-mm-dd");
+      alert("Saisissez le prix avec ce format: XX.XX");
       surligne(prix, true);
      return false;  
     }
     surligne(prix, false);
     return true;
   } else {
-    alert("Saisissez la date avec ce format: yyyy-mm-dd");
+    alert("Saisissez le prix avec ce format: XX.XX");
     surligne(prix, true);
     return false;
   }

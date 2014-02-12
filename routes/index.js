@@ -3,6 +3,8 @@ var BSON = mongo.BSONPure;
 var url = "/public/css/iamges/";
 var tab_categorie = ['Desktops','Laptops','Accessoires','Logiciels','PDAs','photo','LecteursMP3'];
 module.exports = function(app, db) {
+    var artBd = db.collection('article');
+    var memBd = db.collection('membre');
     
     app.get("/", function(req, res) {
         //inserer();
@@ -13,7 +15,7 @@ module.exports = function(app, db) {
                     res.send(500, 'Erreur interne');
                 }
                 console.log(objets);
-             res.render("index",{ 'donnee':objets}); 
+             res.render("index2",{ 'donnee':objets}); 
             });
         });
        
@@ -46,7 +48,7 @@ module.exports = function(app, db) {
                           description: article.description,
                           marque: article.marque,
                           model: article.model,
-                          url: article.urlww  
+                          url: article.url  
                           }
                  },
                  function(err, collection){
@@ -76,6 +78,35 @@ module.exports = function(app, db) {
              res.render("miseAJourArticle",{ 'monArticle':art}); 
             });
         });
+    });
+    
+    app.post("/enregistrement/article", function(req, res) {
+        var art = {};
+        console.log("dans la récupératoin des articles");
+        console.log(req.body);
+        art = creerArticle(req.body);
+        
+        curseur = artBd.find();
+        curseur.each(function(err, doc) {
+            if(err) {
+                console.log("Erreur lors de la récupératoin des articles");
+                throw err;
+            }
+
+           if(doc){
+                console.log("id_article: "+ doc.id);
+                if(art.id == doc.id) res.render('errCreationArt',{ 'monArticle':art});
+           }
+        });
+        
+        artBd.insert(art, {safe: true}, function(err, doc) {
+            if(err) {
+                console.log("Erreur lors de l'ajout du billet");
+                throw err;
+            }
+
+        });
+        res.redirect("/article/" + art.nom);
     });
       
     app.get("/admin/publier", function(req, res) {
@@ -108,8 +139,8 @@ module.exports = function(app, db) {
     });
 
 
-    app.get("/article", function(req, res) {
-        var nom = "Dell Inspiron";
+    app.get("/article/:nomArticle", function(req, res) {
+        var nom = req.params.nomArticle;
         db.collection('article', function(err, collection) {
             collection.find().toArray(function(err, objets) {
                 if(err) {
@@ -172,24 +203,19 @@ module.exports = function(app, db) {
 
 creerArticle = function(art){
     var article = {};
-    
-    article.nom              = art.getElementById("nom");
-    article.prix             = art.getElementById("prix");
-    article.description      = art.getElementById("desc");    
-    article.categorie        = art.getElementById("categorie");
-    article.marque           = art.getElementById("marque");
-    article.model            = art.getElementById("model");
-    article.url              = url + "" + art.getElementById();
+    article = art;
+
+    article.url              = url;
     var date                 = new Date();
     mois                     = date.getMonth() + 1;
     jour                     = date.getDate();
     if (mois < 10) mois      = "0" + mois;
     if (jour < 10) jour      = "0" + jour;
     article.dateDeCreation   = date.getFullYear() + "-" + mois + "-" + jour;
-    article.idDuCreateur     = art.getElementById();
-    article.idArticle        = "" + article.dateDeCreation + article.nom ;
+    article.idDuCreateur;
+    article.idArticle        = ("" + (article.marque).substring(0,3) + article.nom).toUpperCase() ;
     
-  return arcticle;
+  return article;
     
 }; 
 

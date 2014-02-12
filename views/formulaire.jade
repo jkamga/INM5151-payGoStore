@@ -6,7 +6,7 @@ html
     script(src='/javascripts/script.js')
   body
     h1 bienvenu renseigner l'article
-    form(methode = 'post', action = 'enregistrement')
+    form(method='post', action='/enregistrement/article')
       fieldset
         legend Informations sur le produit
         label(for='nom') nom de l'article &#1645?&nbsp;&nbsp;
@@ -23,8 +23,7 @@ html
         br
         label(for='prix') Prix de l'article &#1645?&nbsp;&nbsp;
         br
-        input(type='text', name='prix',id='prix',onblur = 'return verifPrix(this)', placeholder='0.00', tablindex='1',required='required', accesskey='n')
-        &nbsp;$       
+        input(type='text', name='prix',id='prix',onblur = 'return verifPrix(this)', placeholder='0.00', tablindex='1',required='required', accesskey='n')       
         br
         label(for='categorie') choisi une categorie de l'article
         br
