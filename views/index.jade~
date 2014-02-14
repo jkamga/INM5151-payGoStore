@@ -103,25 +103,25 @@ html
                   .widget-entry
                     ul
                       li
-                        a(href='#', title='Desktops')
+                        a(href='/categorie/Desktops/:cat = 1', title='Desktops')
                           span Oridateurs de Bureau
                       li
-                        a(href='#', title='Laptops & Notebooks')
+                        a(href='/categorie/Laptops', title='Laptops & Notebooks')
                           span Laptops & Notebooks
                       li
-                        a(href='#', title='Accessoires')
+                        a(href='/categorie/Accessoires', title='Accessoires')
                           span Accessoires
                       li
-                        a(href='#', title='Logiciels')
+                        a(href='/categorie/Logiciels', title='Logiciels')
                           span Logiciels
                       li
-                        a(href='#', title='Telephones & PDAs')
+                        a(href='/categorie/PDAs', title='Telephones & PDAs')
                           span Telephones & PDAs
                       li
-                        a(href='#', title='Appareils photo')
+                        a(href='/categorie/photo', title='Appareils photo')
                           span Appareils photo
                       li.last
-                        a(href='#', title='Lecteurs MP3')
+                        a(href='/categorie/LecteursMP3', title='Lecteurs MP3')
                           span Lecteurs MP3
                 li.widget
                   h2 Informations 
@@ -131,7 +131,7 @@ html
                         a(href='/AproposDeNous', title='A Propos de nous') A propos de nous
                              
                       li
-                        a(href='#', title='Polique de Confidentialite') Polique  Confidentialite
+                        a(href='/confidentialite', title='Polique de Confidentialite') Polique  Confidentialite
                                    
                       li
                         a(href='#', title='Conditions Generales') Conditions Generales

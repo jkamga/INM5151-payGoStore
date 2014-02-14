@@ -108,6 +108,29 @@ module.exports = function(app, db) {
         });
         res.redirect("/article/" + art.nom);
     });
+    
+    app.get("/admin/article/supprimer/:nomArticle", function(req, res) {
+        var id = req.body.params;
+        var art;
+        curseur = artBd.find();
+        curseur.each(function(err, doc) {
+            if(err) {
+                console.log("Erreur lors de la récupératoin des articles");
+                throw err;
+            }
+
+           if(doc){
+             console.log("id_article: "+ doc.id);
+             if(id == doc.id){ doc = art;
+                artBd.remove(art, {'article': true}, function(err, numberOfRemovedDocs) {
+                   console.log(numberOfRemovedDocs + " billet supprimé (doit être 1) numore est: "+id);
+                });
+                res.render('index2');
+              }
+           }
+        });
+        res.render('index2');
+    });
       
     app.get("/admin/publier", function(req, res) {
         res.render('formulaire');
